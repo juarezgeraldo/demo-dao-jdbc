@@ -26,7 +26,6 @@ public class Seller implements Serializable{
 		this.department = department;
 	}
 
-
 	public Integer getId() {
 		return id;
 	}
@@ -65,6 +64,14 @@ public class Seller implements Serializable{
 
 	public void setBaseSalary(Double baseSalary) {
 		this.baseSalary = baseSalary;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 
 	@Override
