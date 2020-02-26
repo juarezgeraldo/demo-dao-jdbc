@@ -17,7 +17,6 @@ import model.entities.Department;
 import model.entities.Seller;
 
 public class SellerDaoJDBC implements SellerDao{
-	
 	private Connection conn;
 	
 	public SellerDaoJDBC(Connection conn) {
@@ -132,7 +131,7 @@ public class SellerDaoJDBC implements SellerDao{
 			if (rs.next()) {
 				Department dep = instantiateDepartment(rs);
 				
-				Seller obj = instantiageSeller(rs, dep);
+				Seller obj = instantiateSeller(rs, dep);
 				
 				return obj;
 			}
@@ -148,7 +147,7 @@ public class SellerDaoJDBC implements SellerDao{
 	
 	}
 
-	private Seller instantiageSeller(ResultSet rs, Department dep) throws SQLException {
+	private Seller instantiateSeller(ResultSet rs, Department dep) throws SQLException {
 		Seller obj = new Seller();
 		obj.setId(rs.getInt("Id"));
 		obj.setName(rs.getString("Name"));
@@ -192,7 +191,7 @@ public class SellerDaoJDBC implements SellerDao{
 					map.put(rs.getInt("DepartmentId"), dep);
 				}
 
-				Seller obj = instantiageSeller(rs, dep);
+				Seller obj = instantiateSeller(rs, dep);
 				list.add(obj);
 			}
 			return list;
@@ -233,7 +232,7 @@ public class SellerDaoJDBC implements SellerDao{
 					map.put(rs.getInt("DepartmentId"), dep);
 				}
 
-				Seller obj = instantiageSeller(rs, dep);
+				Seller obj = instantiateSeller(rs, dep);
 				list.add(obj);
 			}
 			return list;
